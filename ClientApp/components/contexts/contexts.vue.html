@@ -10,6 +10,11 @@
                 </b-form-fieldset>
             </div>
             <div class="col-md-4">
+                <b-form-fieldset horizontal label="Meta fileds" :label-cols="3">
+                    <b-form-input v-model="metaFields" placeholder="Meta fields diveded with ';' to show"/>
+                </b-form-fieldset>
+            </div>
+            <div class="col-md-4">
                 <b-form-fieldset horizontal label="Filter" :label-cols="3">
                     <b-form-input v-model="filter" placeholder="Type to Search"/>
                 </b-form-fieldset>

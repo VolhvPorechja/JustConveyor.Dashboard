@@ -40,6 +40,7 @@ module.exports = (env) =>
                 $: "jquery",
                 jQuery: "jquery",
                 Popper: ['popper.js', 'default'],
+                _: 'lodash',
                 "window.jQuery": "jquery"
             }),
             new webpack.DefinePlugin({

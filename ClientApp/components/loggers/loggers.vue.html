@@ -20,11 +20,21 @@
                  :fields="fields"
                  :current-page="currentPage"
                  :per-page="perPage"
+                 @row-clicked="onLoggerSelected"
                  :filter="filter"></b-table>
         <div class="row">
             <div class="col-sm-8">
                 <b-pagination :total-rows="totalRows" :per-page="perPage" v-model="currentPage"/>
             </div>
+        </div>
+        <div class="row" v-if="selectedLogger">
+            <h4>{{ selectedLogger.Name }}</h4>
+            <b-form-textarea id="textarea1"
+                             plaintext
+                             v-model="lastLogs"
+                             :rows="20"
+                             :max-rows="20">
+            </b-form-textarea>
         </div>
     </div>
 </template>
