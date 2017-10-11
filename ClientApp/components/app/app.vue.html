@@ -1,0 +1,64 @@
+<template>
+    <div id='app-root' class="container-fluid">
+        <b-container fluid>
+            <b-row class="mx-auto col-md-8 service-form">
+                <b-col sm="2">
+                    <label class="float-right" for="input-small">Service address:</label>
+                </b-col>
+                <b-col sm="6">
+                    <b-form-input id="input-small" size="sm" type="text" placeholder="Enter metrics service address" v-model="server"></b-form-input>
+                </b-col>
+                <b-col sm="2">
+                    <button class="btn btn-sm btn-default" v-on:click="loadMetrics">Load</button>
+                </b-col>
+                <b-col sm="2">
+                    <label class="form-check-label align-middle">
+                        <input type="checkbox" class="form-check-input" v-on:change="autoupdateChanged" v-model="autoupdateFlag">
+                        Autoload
+                    </label>
+                </b-col>
+            </b-row>
+        </b-container>
+        <b-container fluid>
+            <b-row class="mx-auto col-md-8 service-form">
+                <table class="table table-striped table-sm">
+                    <tbody>
+                    <tr>
+                        <td class="w-25">Server name</td>
+                        <td>{{ server }}</td>
+                    </tr>
+                    <tr>
+                        <td>Started</td>
+                        <td>{{ started }}</td>
+                    </tr>
+                    <tr>
+                        <td>In flight</td>
+                        <td>{{ inFlight }}</td>
+                    </tr>
+                    <tr>
+                        <td>Updated</td>
+                        <td>{{ updated }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </b-row>
+        </b-container>
+        <b-container fluid>
+            <b-row class="mx-auto col-md-10 service-form">
+                <menu-component 
+                        :blueprintsCount="model.blueprints.length"
+                        :pipelinesCount="model.pipelines.length"
+                        :queuesCount="model.queues.length"
+                        :contextsCount="model.contexts.length"
+                        :suppliersCount="model.suppliers.length"
+                        :loggersCount="model.loggers.length"
+                />
+                <div class="col-sm-9 col-md-9 pt-3" role="main">
+                    <router-view :model="model"></router-view>
+                </div>
+            </b-row>
+        </b-container>
+    </div>
+</template>
+
+<script src="./app.ts"></script>

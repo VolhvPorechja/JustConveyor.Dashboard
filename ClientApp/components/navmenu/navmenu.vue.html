@@ -1,0 +1,32 @@
+<template>
+    <div class="main-nav col-sm-2 col-md-2 d-none d-sm-block list-group">
+        <router-link to="/blueprints" class="list-group-item" :exact="true">
+            Blueprints
+            <span align="center" class="counter float-right">{{ blueprintsCount }}</span>
+        </router-link>
+        <router-link to="/pipelines" class="list-group-item" :exact="true">
+            Pipelines
+            <span align="center" class="counter float-right">{{ pipelinesCount }}</span>
+        </router-link>
+        <router-link to="/queues" class="list-group-item" :exact="true">
+            Queues
+            <span align="center" class="counter float-right">{{ queuesCount }}</span>
+        </router-link>
+        <router-link to="/contexts" class="list-group-item" :exact="true">
+            Contexts
+            <span align="center" class="counter float-right">{{ contextsCount }}</span>
+        </router-link>
+        <router-link to="/suppliers" class="list-group-item" :exact="true">
+            Suppliers
+            <span align="center" class="counter float-right">{{ suppliersCount }}</span>
+        </router-link>
+        <router-link to="/loggers" class="list-group-item" :exact="true">
+            Loggers
+            <span align="center" class="counter float-right">{{ loggersCount }}</span>
+        </router-link>
+    </div>
+</template>
+
+<style src="./navmenu.css"/>
+
+<script src="./navmenu.ts"></script>
